@@ -1,7 +1,7 @@
 import React from "react";
 
-import Banner from "./components/banner/Banner";
 import MovieSlide from "../../components/movieSlide/MovieSlide";
+import Banner from "./components/banner/Banner";
 
 import { useMoviesQuery } from "../../hooks/useMovies";
 
