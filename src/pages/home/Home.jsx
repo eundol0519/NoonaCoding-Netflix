@@ -1,15 +1,14 @@
 import React from "react";
 
-import Banner from "./components/Banner/Banner";
+import Banner from "./components/banner/Banner";
+import MovieSlide from "../../components/movieSlide/MovieSlide";
 
-import { usePopularMoviesQuery } from "../../hooks/usePopularMovies";
+import { useMoviesQuery } from "../../hooks/useMovies";
 
 import { Alert, Spinner } from "react-bootstrap";
 
-import styles from "./Home.module.css";
-
 const Home = () => {
-  const { data, isLoading, isError, error } = usePopularMoviesQuery();
+  const { data, isLoading, isError, error } = useMoviesQuery("popular");
 
   if (isLoading) {
     return <Spinner />;
@@ -22,6 +21,9 @@ const Home = () => {
   return (
     <div>
       <Banner data={data[0]} />
+      <MovieSlide type="popular" title="Popular" />
+      <MovieSlide type="top_rated" title="Top Rated" />
+      <MovieSlide type="upcoming" title="Upcoming" />
     </div>
   );
 };

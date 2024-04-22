@@ -1,0 +1,8 @@
+.container {
+    margin: 30px 15px 0;
+}
+
+.carouselContainer {
+    overflow: hidden;
+    height: 440px;
+}
